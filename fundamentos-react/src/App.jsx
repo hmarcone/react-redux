@@ -15,6 +15,8 @@ import ListaAlunos from "./components/repeticao/ListaAlunos";
 import TabelaProdutos from "./components/repeticao/TabelaProdutos";
 import ParOuImpar from "./components/condicional/ParOuImpar";
 import UsuarioInfo from "./components/condicional/UsuarioInfo";
+import DiretaPai from "./components/comunicacao/DiretaPai";
+import IndiretaPai from "./components/comunicacao/IndiretaPai";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => (
@@ -23,11 +25,19 @@ export default () => (
 
         <div className="Cards">
 
+            <Card titulo="#10 - Comunicação Indireta" color="#8BAD39">
+                <IndiretaPai></IndiretaPai>
+            </Card>
+
+            <Card titulo="#09 - Comunicação Direta" color="#59323C">
+                <DiretaPai></DiretaPai>
+            </Card>
+
             <Card titulo="#08 - Renderização Condicional" color="#982395">
                 <ParOuImpar numero={20}></ParOuImpar>
                 <UsuarioInfo usuario={{ nome: "Fernando" }} />
             </Card>
-            
+
             <Card titulo="#07 - Desafio Repetição" color="#3A9AD9">
                 <TabelaProdutos></TabelaProdutos>
             </Card>
@@ -38,9 +48,9 @@ export default () => (
 
             <Card titulo="#05 - Componente com Filhos" color="#00C8F8">
                 <Familia sobrenome="Ferreira">
-                    <FamiliaMembro nome="Pedro" />                   
+                    <FamiliaMembro nome="Pedro" />
                     <FamiliaMembro nome="Ana" />
-                    <FamiliaMembro nome="Gustavo" />                    
+                    <FamiliaMembro nome="Gustavo" />
                 </Familia>
             </Card>
 

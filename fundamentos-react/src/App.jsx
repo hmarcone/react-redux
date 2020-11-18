@@ -7,7 +7,7 @@ import Fragmento from './components/basicos/Fragmento'
 
 import Card from "./components/layout/Card";
 
-import Mega from "./components/layout/mega/Mega";
+import Mega from "./components/mega/Mega";
 import Aleatorio from "./components/basicos/Aleatorio";
 import Familia from "./components/basicos/Familia";
 import FamiliaMembro from "./components/basicos/FamiliaMembro";

@@ -15,9 +15,4 @@ export default props => (
         <Todo />
         <About />
     </div>
-    // <div className='container'>
-    //     <h1>Teste</h1>
-    //     {/* <Menu />
-    //     <Routes /> */}
-    // </div>
 )

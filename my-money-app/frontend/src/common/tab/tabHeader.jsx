@@ -9,15 +9,16 @@ class TabHeader extends Component {
     render() {
         const selected = this.props.tab.selected === this.props.target
         const visible = this.props.tab.visible[this.props.target]
+
         return (
-            <li className={selected ? 'active' : ''}> 
-                <a href='javascript:;' 
-                    data-toggle='tab'
-                    onClick={() => this.props.selectTab(this.props.target)}
-                    data-target={this.props.target}>
-                    <i className={`fa fa-${this.props.icon}`}></i> {this.props.label}
-                </a> 
-            </li> 
+            // <li className={selected ? 'active' : ''}> 
+            //     <a href='javascript:;' 
+            //         data-toggle='tab'
+            //         onClick={() => this.props.selectTab(this.props.target)}
+            //         data-target={this.props.target}>
+            //         <i className={`fa fa-${this.props.icon}`}></i> {this.props.label}
+            //     </a> 
+            // </li> 
 
             // <li>
             //     <a href='javascript:;'
@@ -27,16 +28,16 @@ class TabHeader extends Component {
             //         <i className={`fa fa-${this.props.icon}`}></i> {this.props.label}                     
             //     </a>
             // </li>
-            // <If test={visible}>
-            //     <li className={selected ? 'active' : ''}> 
-            //         <a href='javascript:;' 
-            //             data-toggle='tab'
-            //             onClick={() => this.props.selectTab(this.props.target)}
-            //             data-target={this.props.target}>
-            //             <i className={`fa fa-${this.props.icon}`}></i> {this.props.label}
-            //         </a> 
-            //     </li> 
-            // </If>
+            <If test={visible}>
+                <li className={selected ? 'active' : ''}> 
+                    <a href='javascript:;' 
+                        data-toggle='tab'
+                        onClick={() => this.props.selectTab(this.props.target)}
+                        data-target={this.props.target}>
+                        <i className={`fa fa-${this.props.icon}`}></i> {this.props.label}
+                    </a> 
+                </li> 
+            </If>
         )
     }
 }

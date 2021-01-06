@@ -9,12 +9,14 @@ import TabsHeader from '../common/tab/tabsHeader'
 import TabsContent from '../common/tab/tabsContent'
 import TabHeader from '../common/tab/tabHeader'
 import TabContent from '../common/tab/tabContent'
+import { selectTab } from '../common/tab/tabActions'
 
 class BillingCycle extends Component {
 
-    // componentWillMount() {
-    //     this.props.init()
-    // }
+    componentWillMount() {
+        // this.props.init()
+        this.props.selectTab('tabList')
+    }
 
     render() {
         return (
@@ -29,21 +31,24 @@ class BillingCycle extends Component {
                             <TabHeader label='Excluir' icon='trash-o' target='tabDelete' />
                         </TabsHeader> 
                         <TabsContent> 
-                            {/* <TabContent id='tabList'>
-                                <List />
+                            <TabContent id='tabList'>
+                                {/* <List /> */}<h1>Lista</h1>
                             </TabContent>
                             <TabContent id='tabCreate'>
-                                <Form onSubmit={this.props.create}
-                                    submitLabel='Incluir' submitClass='primary' />
+                                <h1>Create</h1>
+                                {/* <Form onSubmit={this.props.create}
+                                    submitLabel='Incluir' submitClass='primary' /> */}
                             </TabContent>
                             <TabContent id='tabUpdate'>
-                                <Form onSubmit={this.props.update}
-                                    submitLabel='Alterar' submitClass='info' />
+                                <h1>Update</h1>
+                                {/* <Form onSubmit={this.props.update}
+                                    submitLabel='Alterar' submitClass='info' /> */}
                             </TabContent>
                             <TabContent id='tabDelete'>
-                                <Form onSubmit={this.props.remove} readOnly={true}
-                                    submitLabel='Excluir' submitClass='danger' />
-                            </TabContent> */}
+                                <h1>Delete</h1>
+                                {/* <Form onSubmit={this.props.remove} readOnly={true}
+                                    submitLabel='Excluir' submitClass='danger' /> */}
+                            </TabContent>
                         </TabsContent> 
                     </Tabs> 
                 </Content> 
@@ -52,8 +57,10 @@ class BillingCycle extends Component {
     }
 }
 
+const mapDispatchToProps = dispatch => bindActionCreators({selectTab}, dispatch)
+export default connect(null, mapDispatchToProps)(BillingCycle)
 // const mapDispatchToProps = dispatch => bindActionCreators({
 //     init, create, update, remove
 // }, dispatch)
 // export default connect(null, mapDispatchToProps)(BillingCycle)
-export default BillingCycle
+//export default BillingCycle

@@ -16,7 +16,12 @@ export function getList() {
 
 //testetete
 export function create(values) {
-    return submit(values, 'post')
+    //console.log(values);
+    //return submit(values, 'post')
+    axios.post(`${BASE_URL}/billingCycles`, values)
+    return {
+        type: 'TEMP'
+    }
 }
 
 export function update(values) {
@@ -30,6 +35,7 @@ export function remove(values) {
 function submit(values, method) {
     return dispatch => {
         const id = values._id ? values._id : ''
+        console.log(id)
         axios[method](`${BASE_URL}/billingCycles/${id}`, values)
             .then(resp => {
                 toastr.success('Sucesso', 'Operação Realizada com sucesso.')

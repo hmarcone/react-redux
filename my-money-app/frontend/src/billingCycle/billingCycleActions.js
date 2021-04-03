@@ -17,23 +17,23 @@ export function getList() {
 //testetete
 export function create(values) {
     //console.log(values);
-    //return submit(values, 'post')
+    return submit(values, 'post')
 
-    return dispatch => {
-        axios.post(`${BASE_URL}/billingCycles`, values)
-        .then(resp => {
-            toastr.success('Sucesso', 'Operação Realizada com sucesso.') 
-            dispatch([
-                resetForm('billingCycleForm'),
-                getList(),
-                selectTab('tabList'),
-                showTabs('tabList', 'tabCreate')
-            ])   
-        })
-        .catch(e => {
-            e.response.data.errors.forEach(error => toastr.error('Erro', error))
-        })
-    }
+    // return dispatch => {
+    //     axios.post(`${BASE_URL}/billingCycles`, values)
+    //     .then(resp => {
+    //         toastr.success('Sucesso', 'Operação Realizada com sucesso.') 
+    //         dispatch([
+    //             resetForm('billingCycleForm'),
+    //             getList(),
+    //             selectTab('tabList'),
+    //             showTabs('tabList', 'tabCreate')
+    //         ])   
+    //     })
+    //     .catch(e => {
+    //         e.response.data.errors.forEach(error => toastr.error('Erro', error))
+    //     })
+    // }
 }
 
 export function update(values) {

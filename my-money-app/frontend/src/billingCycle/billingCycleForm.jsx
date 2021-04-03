@@ -32,10 +32,8 @@ class BillingCycleForm extends Component {
                     <ItemList cols='12 6' list={debts} readOnly={readOnly} field='debts' legend='Débitos' showStatus={true} />
                 </div>
                 <div className='box-footer'>
-                    <button type='submit' className='btn btn-primary'>Submit</button>
-                    {/* <button type='submit' className={`btn btn-${this.props.submitClass}`}>
-                        {this.props.submitLabel}
-                        </button>*/}
+                    {/* <button type='submit' className='btn btn-primary'>Submit</button> */}
+                    <button type='submit' className={`btn btn-${this.props.submitClass}`}>{this.props.submitLabel}</button>
                     <button type='button' className='btn btn-default' onClick={this.props.init}>Cancelar</button> 
                 </div>
             </form>
